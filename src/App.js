@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./adminPages/Dashboard";
+
+import {
+  AddUser,
+  UpdateUser,
+  ViewUser,
+  CreateChannel,
+  UpdateChannel,
+  ViewChannel,
+  AddProgram,
+  UpdateProgram,
+  ViewProgram,
+  Login,
+} from "./adminPages";
+
+import Home from "./userPage/pages/home/home";
+import Movies from "./userPage/pages/movies/movie_home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<AddUser />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/addUsers" element={<AddUser />} />
+        <Route path="/updateUser/:id" element={<UpdateUser />} />
+        <Route path="/allUsers" element={<ViewUser />} />
+        <Route path="/addProgram" element={<AddProgram />} />
+        <Route path="/updateProgram/:id" element={<UpdateProgram />} />
+        <Route path="/viewProgram" element={<ViewProgram />} />
+        <Route path="/createChannel" element={<CreateChannel />} />
+        <Route path="/updateChannel/:id" element={<UpdateChannel />} />
+        <Route path="/viewChannel" element={<ViewChannel />} />
+      </Routes>
+    </>
   );
 }
 
