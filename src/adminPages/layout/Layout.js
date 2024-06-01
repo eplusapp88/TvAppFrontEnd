@@ -92,9 +92,9 @@ const Layout = ({ children, title, description, keywords, author }) => {
 };
 
 Layout.defaultProps = {
-  title: "DTLS",
-  keywords: "DTLS, dtls,Bahirdar,Ethiopia",
-  author: "DTLS",
+  title: "TNA",
+  keywords: "TNA,tna,Television Network App",
+  author: "TNA",
 };
 
 export default Layout;
